@@ -27,7 +27,19 @@ Tips:
 </head>
 <body>
   <script>
+    var gb = 1024*1024*1024;
+  	var mb = 1024*1024;
+  	var kb = 1024;
   function calc(sizeInBytes) {
+  	if(sizeInBytes/gb>=1){
+  		return(Math.round(sizeInBytes/gb,2)).toString()+"GB";
+  	}else if(sizeInBytes/mb>=1){
+  		return(Math.round(sizeInBytes/mb,2)).toString()+"MB";
+  	}else if (sizeInBytes/kb>=1){
+  		return(Math.round(sizeInBytes/kb,2)).toString()+"KB";
+  	}else{
+  		return(sizeInBytes+"bytes");
+  	}
       return 'size'
   }
 
